@@ -1,9 +1,12 @@
 from django.shortcuts import render, HttpResponse
+import socket
 
 
 # Create your views here.
 def index(request):
-    return HttpResponse("This is home page")
+    context = {"variable": socket.gethostname()}
+    return render(request, "index.html", context)
+    # return HttpResponse("This is home page")
 
 
 def about(request):
