@@ -10,12 +10,18 @@ def index(request):
 
 
 def about(request):
-    return HttpResponse("This is about page")
+    context = {"variable": socket.gethostname()}
+    return render(request, "about.html", context)
+    #return HttpResponse("This is about page")
 
 
 def services(request):
-    return HttpResponse("This is services page")
+    context = {"variable": socket.gethostname()}
+    return render(request, "services.html", context)
+    #return HttpResponse("This is services page")
 
 
 def contact(request):
-    return HttpResponse("This is the contact page")
+    context = {"variable": socket.gethostname()}
+    return render(request, "contact.html", context)
+    #return HttpResponse("This is the contact page")
